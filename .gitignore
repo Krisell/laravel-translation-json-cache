@@ -1,0 +1,4 @@
+.phpunit.*
+build
+composer.lock
+vendor

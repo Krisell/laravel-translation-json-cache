@@ -1,0 +1,35 @@
+{
+    "name": "krisell/laravel-translation-json-cache",
+    "description": "Caches translation JSON files for faster access.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Krisell",
+            "email": "martin.krisell@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "Krisell\\LaravelTranslationJsonCache\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Krisell\\LaravelTranslationJsonCache\\Tests\\": "tests"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Krisell\\LaravelTranslationJsonCache\\TranslationJsonCacheServiceProvider",
+                "Krisell\\LaravelTranslationJsonCache\\ClearJsonCacheCommandServiceProvider"
+            ]
+        }
+    }
+}
