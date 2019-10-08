@@ -18,7 +18,7 @@ TRANSLATION_JSON_CACHE_ENABLED=true
 If your json-files change, you need to clear the cached files for the changes to take effect, if this package is enabled. To simplify this, the package provides an artisan-command:
 
 ```
-translation-json-cache:clear
+php artisan translation-json-cache:clear
 ```
 
 Run this during deployment, unless you have a setup where the whole filesystem is reset (e.g. using Docker), in which case you should never have to run this command.
