@@ -24,3 +24,7 @@ php artisan translation-json-cache:clear
 Run this during deployment, unless you have a setup where the whole filesystem is reset (e.g. using Docker), in which case you should never have to run this command.
 
 The cached files are stored in the `storage/app` directory and are named `translation-cache-{$locale}.php`. The command simply deletes these files, and you may also safely delete them manually.
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
