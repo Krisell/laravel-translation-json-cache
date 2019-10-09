@@ -19,7 +19,8 @@ class ClearTranslationJsonCache extends Command
      *
      * @var string
      */
-    protected $description = 'Deletes cached translation JSON-files, allowing them to be regenereted automatically on the next request.';
+    protected $description = 'Deletes cached translation JSON-files, 
+        allowing them to be regenereted automatically on the next request.';
 
     /**
      * Execute the console command.
