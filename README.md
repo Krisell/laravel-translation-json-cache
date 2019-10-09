@@ -35,4 +35,4 @@ I have been using this solution in production for a while (1500 strings for each
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 ## Future work
-I realize the JSON-option may not be the preferred one, and that most people already use php-files for storing their translation data hierachically. In that case, a similar approach could still possibly save time on parsing and traversal, but this is not the intention of this package.
+I realize the JSON-option may not be the preferred one, and that most people already use php-files for storing their translation data hierachically. In that case, a similar approach could still possibly save time on parsing and traversal, but this is outside the scope of this package. Feel free to investigate this idéa further in a new package!
