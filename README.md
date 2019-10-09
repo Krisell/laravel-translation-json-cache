@@ -1,6 +1,6 @@
 # Laravel Translation Json Cache
 
-When using the `.json`option for translations, the json-file is read and parsed for every request. This package caches the parsed data as a php-file after the first request, making all subsequent reqeusts faster since no parsing has to be done and the opcache can be used. The actual performance boost depends on the size of the translation file and the filesystem, see below.
+When using the `.json` option for translations, the json-file is read and parsed for every request. This package caches the parsed data as a php-file after the first request, making all subsequent reqeusts faster since no parsing has to be done and the opcache can be used. The actual performance boost depends on the size of the translation file and the filesystem, see below.
 
 ## Installation
 ```bash
