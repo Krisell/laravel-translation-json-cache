@@ -5,11 +5,13 @@ namespace Krisell\LaravelTranslationJsonCache;
 use Illuminate\Support\Facades\File;
 use Illuminate\Translation\FileLoader;
 
-class FastFileLoader extends FileLoader {
-    protected function loadJsonPaths($locale) {
+class FastFileLoader extends FileLoader
+{
+    protected function loadJsonPaths($locale)
+    {
         $path = storage_path("app/translation-cache-{$locale}.php");
 
-        if (File::exists($path)) {
+        if (config('translation-json-cache.active') === true && File::exists($path)) {
             return require $path;
         }
 
