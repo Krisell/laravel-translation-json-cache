@@ -26,7 +26,7 @@ Run this during deployment, unless you have a setup where the whole filesystem i
 The cached files are stored in the `storage/app` directory and are named `translation-cache-{$locale}.php`. The command simply deletes these files, and you may also safely delete them manually.
 
 ## Performance boost
-On my Macbook Pro 2018 (2.6 GHz i7), Laravel Valet, and using a JSON translation file of 1500 strings (real strings of varying length), the first call to `__("A")` during a request takes about `1.2 ms`. Enabling this package and the same call takes `0.08 ms`, i.e. the actual performance boost is in the order of `1 ms`, which is substantial considering that a simple full request could be as fast as `10 ms`.
+On a Macbook Pro 2018 (2.6 GHz i7), using Laravel Valet, and having a JSON translation file of 1500 strings (real strings of varying length), the first call to `__("A")` during a request takes about `1.2 ms`. Enabling this package and the same call takes `0.08 ms`, i.e. the actual performance boost is in the order of `1 ms`, which is substantial considering that a simple full request could be as fast as `10 ms`.
 
 I have been using this package in production (1500 strings for each language) and I have to say the performance boost is not as noticable there. This may be because our server setup uses docker and an all in-memory disk. I'm open to additional measurements, please feel free to contribute!
 
