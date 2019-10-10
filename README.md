@@ -20,7 +20,7 @@ If your json-files change, you need to run the command again for the changes to 
 You may also clear the cached files using the following command
 
 ```
-php artisan translation-json-cache:clear
+php artisan translation-json:clear
 ```
 
 Run `translation-json:cache` during deployment in the same way you run `route:cache` and `config:cache`.
