@@ -6,6 +6,13 @@ use Krisell\LaravelTranslationJsonCache\Tests\TestCase;
 class MakeJsonCacheCommandTest extends TestCase
 {
     /** @test */
+    public function the_artisan_command_prints_output_after_being_done()
+    {
+        $this->artisan("translation-json:cache")
+            ->expectsOutput("Translation JSON cached successfully!");
+    }
+
+    /** @test */
     function no_cache_files_are_created_if_no_json_files_exist()
     {
         $this->artisan('translation-json:cache');
