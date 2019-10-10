@@ -5,14 +5,14 @@ use Krisell\LaravelTranslationJsonCache\Tests\TestCase;
 class ClearJsonCacheCommandTest extends TestCase
 {
     /** @test */
-    public function the_artisan_commands_prints_output_after_being_done()
+    public function the_artisan_command_prints_output_after_being_done()
     {
         $this->artisan("translation-json:clear")
             ->expectsOutput("Translation JSON cache cleared!");
     }
 
     /** @test */
-    public function the_artisan_commands_clear_cache_files()
+    public function the_artisan_command_clear_cache_files()
     {
         $this->assertCount(0, $this->getFiles());
 
