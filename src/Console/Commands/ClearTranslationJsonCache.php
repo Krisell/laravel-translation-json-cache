@@ -10,7 +10,8 @@ class ClearTranslationJsonCache extends Command
 {
     protected $signature = 'translation-json:clear';
 
-    protected $description = 'Deletes cached translation JSON-files, letting the application fallback to the JSON files.';
+    protected $description = 'Deletes cached translation JSON-files,
+        letting the application fallback to the JSON files.';
 
     public function handle()
     {

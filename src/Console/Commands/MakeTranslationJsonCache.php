@@ -28,7 +28,7 @@ class MakeTranslationJsonCache extends Command
         $this->info("Translation JSON cached successfully!");
     }
 
-    private function getTranslationJsonFiles () {
+    private function getTranslationJsonFiles() {
         return collect(File::files(base_path().'/resources/lang'))->map(function ($file) {
             return $file->getFilename();
         })->filter(function ($filename) {

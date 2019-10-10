@@ -39,7 +39,7 @@ class MakeJsonCacheCommandTest extends TestCase
     }
 
     /** @test */
-    function the_data_in_the_cached_file_corresponds_to_the_json_file ()
+    function the_data_in_the_cached_file_corresponds_to_the_json_file()
     {
         file_put_contents(base_path().'/resources/lang/en.json', '{"Test":"Testing123"}');
 
