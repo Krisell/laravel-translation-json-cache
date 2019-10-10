@@ -10,8 +10,6 @@ class TranslationJsonCacheServiceProvider extends ServiceProvider implements Def
 {
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'translation-json-cache');
-
         $this->app->extend('translation.loader', function ($translation, $app) {
             return new FastFileLoader($app['files'], $app['path.lang']);
         });

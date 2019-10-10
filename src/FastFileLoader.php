@@ -9,16 +9,8 @@ class FastFileLoader extends FileLoader
 {
     protected function loadJsonPaths($locale)
     {
-        $path = storage_path("app/translation-cache-{$locale}.php");
-
-        if (config('translation-json-cache.active') === true && File::exists($path)) {
-            return require $path;
-        }
-
-        return tap(parent::loadJsonPaths($locale), function ($translations) use ($path) {
-            if (config('translation-json-cache.active') === true) {
-                File::put($path, '<?php return '.var_export($translations, true).';'.PHP_EOL);
-            }
-        });
+        return File::exists($path = base_path("/bootstrap/cache/translation-{$locale}.php"))
+            ? require $path
+            : parent::loadJsonPaths($locale);
     }
 }

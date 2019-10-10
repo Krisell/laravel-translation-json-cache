@@ -3,37 +3,25 @@
 namespace Krisell\LaravelTranslationJsonCache\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class ClearTranslationJsonCache extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'translation-json-cache:clear';
+    protected $signature = 'translation-json:clear';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Deletes cached translation JSON-files, allowing them to be regenereted automatically on the next request.';
+    protected $description = 'Deletes cached translation JSON-files, letting the application fallback to the JSON files.';
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
-        $files = collect(Storage::files())->filter(function ($filename) {
-            return preg_match('/.*-cache-.*/', $filename);
+        $files = collect(File::files(base_path("bootstrap/cache/")))->map(function ($file) {
+            return $file->getFilename();
+        })->filter(function ($filename) {
+            return preg_match('/translation-.*\.php/', $filename);
         })->each(function ($cacheFile) {
-            Storage::delete($cacheFile);
+            File::delete(base_path("bootstrap/cache/{$cacheFile}"));
         });
 
-        $this->info("Translation JSON cache files cleared.");
+        $this->info("Translation JSON cache cleared!");
     }
 }
